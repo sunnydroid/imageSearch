@@ -8,7 +8,7 @@ Function: Basic Image Search using Google API
 
 TODO: Implement infinite scroll and pagination 
 
-Permission Required: None
+Permission Required: Internet, Network Access
 
 Hours Worked on : 6 Hours
 
