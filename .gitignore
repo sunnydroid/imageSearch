@@ -1,0 +1,5 @@
+# Ignore classpath file
+.classpath
+# Ignore generated files
+/bin
+/gen

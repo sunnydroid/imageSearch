@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GoogleImageSearch</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_image_display">ImageDisplayActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string-array name="imageSize">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+    </string-array>
+    <string-array name="imageColor">
+        <item>black</item>
+        <item>blue</item>
+        <item>brown</item>
+        <item>green</item>
+        <item>orange</item>
+        <item>pink</item>
+        <item>purple</item>
+        <item>red</item>
+        <item>white</item>
+        <item>yellow</item>
+        <item>teal</item>
+    </string-array>
+
+</resources>
