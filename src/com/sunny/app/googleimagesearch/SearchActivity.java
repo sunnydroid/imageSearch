@@ -108,7 +108,7 @@ public class SearchActivity extends Activity {
 	}
 	
 	/**
-	 * Asynchronous search 
+	 * onClick handler for search button
 	 * @param v
 	 */
 	public void onImageSearch(View v) {
@@ -125,6 +125,10 @@ public class SearchActivity extends Activity {
 		executeAsyncRequest(current_search_url);
 	}
 	
+	/**
+	 * Async function
+	 * @param url
+	 */
 	private void executeAsyncRequest(String url) {
 		if(url == null || url.isEmpty()) {
 			return;
@@ -138,8 +142,6 @@ public class SearchActivity extends Activity {
 				JSONArray imageJsonResults = null;
 				try {
 					imageJsonResults = response.getJSONObject("responseData").getJSONArray("results");
-					resultList.clear();
-					gViewAdapter.clear();
 					resultList = ImageResult.fromJSONArray(imageJsonResults);
 					Log.d("DEBUG", resultList.toString());
 					gViewAdapter.addAll(resultList);

@@ -4,6 +4,12 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.Toast;
 
+
+/**
+ * Endless scroll listener
+ * @author sunshah
+ *
+ */
 public abstract class EndlessScrollListner implements OnScrollListener {
 
 	private int visibleThreshold = 5;

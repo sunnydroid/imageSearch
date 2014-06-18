@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * Activity to display clicked image
+ * @author sunshah
+ *
+ */
 public class ImageDisplayActivity extends Activity {
 
 	SmartImageView ivImageResultFull;
