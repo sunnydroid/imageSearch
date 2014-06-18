@@ -33,7 +33,5 @@ public class ImageResultGridViewAdapter extends ArrayAdapter<ImageResult> {
 		
 		return ivImage;
 	}
-	
-	
 
 }

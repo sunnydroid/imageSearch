@@ -37,6 +37,7 @@ public class SearchActivity extends Activity {
 	List<ImageResult> resultList;
 	ImageResultGridViewAdapter gViewAdapter;
 	String filterQuery;
+	String current_search_url;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,14 @@ public class SearchActivity extends Activity {
 		 */
 		gViewAdapter = new ImageResultGridViewAdapter(this, resultList);
 		gvSearchResult.setAdapter(gViewAdapter);
+		/* Attach endless scroll listener */
+		gvSearchResult.setOnScrollListener(new EndlessScrollListner(12) {
+			
+			@Override
+			public void onLoadMore(int page, int totalItemsCount) {
+				executeAsyncRequest(current_search_url + "start=" + page);
+			}
+		});
 	}
 	
 	public void onSettingsClick(MenuItem mi) {
@@ -112,8 +121,17 @@ public class SearchActivity extends Activity {
 			sb.append(filterQuery);
 		}
 		
+		current_search_url = sb.toString();
+		executeAsyncRequest(current_search_url);
+	}
+	
+	private void executeAsyncRequest(String url) {
+		if(url == null || url.isEmpty()) {
+			return;
+		}
+		
 		AsyncHttpClient asyncClient = new AsyncHttpClient();
-		asyncClient.get(sb.toString(), new JsonHttpResponseHandler() {
+		asyncClient.get(current_search_url, new JsonHttpResponseHandler() {
 			
 			@Override
 			public void onSuccess(JSONObject response) {
